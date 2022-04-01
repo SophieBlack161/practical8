@@ -20,7 +20,8 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var s in Model) {
+        @foreach(var s in Model)
+        {
             <tr>
                 <td>@s.Id</td>
                 <td>@s.Name</td>
@@ -28,14 +29,20 @@
                 <td>@s.Age</td>
                 <td>
                     <!-- Add View link -->
-                    <a asp-action="Details" title="view student details"  
-                       asp-route-id=@s.Id><i class="bi bi-list">
+                    <a asp-action="Details" title="view list of student details"  
+                       asp-route-id=@s.Id><i class="bi bi-list"></i>
                     </a> 
 
                     <!-- Add edit link  -->
-                    <a  asp-action="Edit" asp-route-id=@s.Id>Edit</a>
+                    <a asp-action="Edit" title="Edit student details"  
+                       asp-route-id=@s.Id><i class="bi bi-pen"></i>
+                    </a>
+
                     <!-- Add delete link -->
-                    <a  asp-action="Delete" asp-route-id=@s.Id>Delete</a>
+                    <a asp-action="Delete" title="Delete student"  
+                       asp-route-id=@s.Id><i class="bi bi-trash"></i>
+                    </a> 
+                   
                 </td>
             </tr>
         }        

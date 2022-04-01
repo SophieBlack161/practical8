@@ -6,10 +6,10 @@
 <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     
-    <div class=mt-3"">
+    <div class="mt-3">
         <label asp-for="StudentId" class="form-label"></label>
-        <select asp-for="StudentId" class="form-control" asp-items="@Model.Students"))">
-            <option>Select Student</option>
+        <select asp-for="StudentId" class="form-control" asp-items="@Model.Students">
+            <option disabled selected>Select your option</option>
         </select>
         <span asp-validation-for="StudentId" class="text-danger"></span>
     </div>

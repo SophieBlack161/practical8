@@ -50,12 +50,12 @@
             
             <!-- danger action placed on right -->
             <div>
-                <!-- TBC - replace anchor tag with button to toggle display of Delete Modal -->
-                <!--<a asp-controller="Student" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">
+                <!-- TBC - replace anchor tag with button to toggle display of Delete Modal(the data target must be the modal id!!) -->
+                <!-- <a asp-controller="Student" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">
                     Delete
-                </a>  -->
+                </a> -->
 
-                <button data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger" >Delete</button>
+                <button type ="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger" >Delete</button>
                 
             </div>
         </div>    

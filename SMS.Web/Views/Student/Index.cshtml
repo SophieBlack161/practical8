@@ -7,7 +7,11 @@
 
 <h3 class="mb-3">Student List</h3>
 
-<a class="btn btn-sm btn-primary my-3" asp-controller="Student" asp-action="Create" >Create</a>     
+<a class="btn btn-sm btn-primary my-3" asp-controller="Student"
+   asp-action="Create" aria-label="Create a new student" >
+   <i class= "bi bi-plus me-"></i>
+    Create
+</a>     
 
 <table class="table table-hover">
     <thead>
@@ -29,13 +33,13 @@
                 <td>@s.Age</td>
                 <td>
                     <!-- Add View link -->
-                    <a asp-action="Details" title="view list of student details"  
-                       asp-route-id=@s.Id><i class="bi bi-list"></i>
+                    <a title="view list of student details"  asp-action="Details"  asp-route-id=@s.Id>
+                       <i class="bi bi-list"></i>
                     </a> 
 
                     <!-- Add edit link  -->
-                    <a asp-action="Edit" title="Edit student details"  
-                       asp-route-id=@s.Id><i class="bi bi-pen"></i>
+                    <a title="Edit student details"  asp-action="Edit"  asp-route-id=@s.Id>
+                       <i class="bi bi-pen"></i>
                     </a>
 
                     <!-- Add delete link -->

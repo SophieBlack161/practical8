@@ -77,8 +77,9 @@ namespace SMS.Web.Controllers
             // TBC check if s is null and return NotFound()
             if (s == null)
             {               
-                // TBC - Display suitable warning alert and redirect to Index               
-                return NotFound();
+                // TBC - Display suitable warning alert and redirect to Index(list of students)               
+                Alert($"No such student {id}" , AlertType.warning);
+                return RedirectToAction(nameof(Index));
             }   
 
             // pass student to view for editing

@@ -55,6 +55,7 @@ namespace SMS.Web.Controllers
             if(ModelState.IsValid)
             {
                 svc.CreateTicket(tvm.StudentId, tvm.Issue);
+                Alert("Ticket created succesfully!!",AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
 

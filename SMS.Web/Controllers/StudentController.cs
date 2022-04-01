@@ -30,11 +30,12 @@ namespace SMS.Web.Controllers
             // retrieve the student with specifed id from the service
             var s = svc.GetStudent(id);
 
-           
             if (s == null)
             {
                 // TBC - Display suitable warning alert and redirect to Index               
-                return NotFound();
+                Alert($"No such student {id}", AlertType.warning);
+                return RedirectToAction(nameof(Index));
+
             }
 
             // pass student as parameter to the view

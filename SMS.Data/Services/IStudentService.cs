@@ -33,5 +33,5 @@ namespace SMS.Data.Services
         bool RemoveStudentFromModule(int studentId, int moduleId);
 
     }
-    
+
 }

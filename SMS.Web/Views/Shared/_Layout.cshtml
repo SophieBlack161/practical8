@@ -21,22 +21,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Student" asp-action="Index">Students</a>
+                            <a class="dropdown-item" asp-controller="Student" asp-action="Index">Students</a>
                         </li>
                         <!-- TBC - add a menu item for Tickets -->
 
                         <!-- TBC - combine Privacy and About into a single drop down titled Company -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownmenuLink" role="button">Company</a>
+                        
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class = "dropdown-item" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                                <li><a class = "dropdown-item" asp-controller="Home" asp-action="About">About</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="About">About</a>
-                        </li>
-
-                    </ul>
                 </div>
             </div>
         </nav>

@@ -28,11 +28,14 @@
                 <td>@s.Age</td>
                 <td>
                     <!-- Add View link -->
-                    <a title="view student details" asp-controller="Student" asp-action="Details" asp-route-id=@s.Id>View</a>  
+                    <a asp-action="Details" title="view student details"  
+                       asp-route-id=@s.Id><i class="bi bi-list">
+                    </a> 
+
                     <!-- Add edit link  -->
-                    <a asp-controller="Student" asp-action="Edit" asp-route-id=@s.Id>Edit</a>
+                    <a  asp-action="Edit" asp-route-id=@s.Id>Edit</a>
                     <!-- Add delete link -->
-                    <a asp-controller="Student" asp-action="Delete" asp-route-id=@s.Id>Delete</a>
+                    <a  asp-action="Delete" asp-route-id=@s.Id>Delete</a>
                 </td>
             </tr>
         }        

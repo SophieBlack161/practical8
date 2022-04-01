@@ -35,9 +35,12 @@ namespace SMS.Web.Controllers
         public IActionResult Create()
         {
             // TBC - get list of students using service
-
-            var tvm = new TicketViewModel {
+            var students = svc.GetStudents();
+           
+            var tvm = new TicketViewModel
+            {
                 // TBC - populate select list property using list of students
+                Students = new SelectList(students,"Id","Name")
             };
 
             // render blank form passing view model as a a parameter
@@ -49,7 +52,11 @@ namespace SMS.Web.Controllers
         public IActionResult Create(TicketViewModel tvm)
         {
             // TBC - check if modelstate is valid and create ticket, display success alert and redirect to index
-            
+            if(ModelState.IsValid)
+            {
+                svc.CreateTicket(tvm.StudentId, tvm.Issue);
+                return RedirectToAction(nameof(Index));
+            }
 
             // redisplay the form for editing
             return View(tvm);

@@ -3,12 +3,32 @@
 <h3>Open Ticket List</h3>
 
 <div class="mt-4 mb-4">
-   <!-- TBC - add an action link styled as a button to navigate to Create Action -->
-   <!--       consider supplementing the button text with a suitable icon        -->  
-  
 </div>
 
-<!-- TBC - add a table to display all open tickets and in each tickets action   -->
-<!--       column add a Close ticket button wrapped in a form to close a ticket -->
+<table class="table">
+      <thead>
+         <tr>
+
+         </tr>
+      </thead>
+      <tbody>
+         @foreach(var t in Model)
+         {
+            <tr>
+               <td>@t.Id</td>
+               <td>@t.Student.Name</td>
+               <td>@t.Issue</td>
+               <td>@t.CreatedOn</td>
+               <td>
+                  <form asp-action="Close">
+                     <input type="hidden" name="id" value=@t.Id />
+                     <input type="submit" value="Close" class="btn btn-link"/>
+                  </form>
+               </td>
+
+            </tr>
+         }
+      </tbody>
+</table>
 
 

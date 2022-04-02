@@ -26,8 +26,13 @@ namespace SMS.Web.Controllers
         public IActionResult Close(int id)
         {
             // TBC - close ticket via service then check that ticket was closed
+            var t = svc.CloseTicket(id);
+            if(t == null)
+            {
+                Alert("No such ticket found", AlertType.warning);
+            }
             // if not display a warning/error alert otherwise a success alert
-
+            Alert($"Ticket {id} closed", AlertType.info);
             return RedirectToAction(nameof(Index));
         }
        

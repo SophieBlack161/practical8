@@ -2,32 +2,43 @@
 
 <h3>Open Ticket List</h3>
 
+<!-- add an action link styled as a button to navigate to Create -->
+
 <div class="mt-4 mb-4">
+   <a asp-action="Create" class="btn btn-primary btn-sm">
+      <i class="bi bi-plus"></i>Create Ticket
+   </a>
 </div>
+
+<!-- TBC - add a table to display all open tickets -->
+<!-- TBC - add a Close ticket button wrapped in a form to close a ticket -->
 
 <table class="table">
       <thead>
          <tr>
-
+            <th>Id</th>
+            <th>Student</th>
+            <th>Issue</th>
+            <th>Created</th>
+            <th>Actions</th>
          </tr>
       </thead>
       <tbody>
-         @foreach(var t in Model)
-         {
-            <tr>
-               <td>@t.Id</td>
-               <td>@t.Student.Name</td>
-               <td>@t.Issue</td>
-               <td>@t.CreatedOn</td>
-               <td>
-                  <form asp-action="Close">
-                     <input type="hidden" name="id" value=@t.Id />
-                     <input type="submit" value="Close" class="btn btn-link"/>
-                  </form>
-               </td>
-
-            </tr>
-         }
+      @foreach(var t in Model)
+      {
+         <tr>
+            <td>@t.Id</td>
+            <td>@t.Student.Name</td>
+            <td>@t.Issue</td>
+            <td>@t.CreatedOn</td>
+            <td>
+               <form asp-action="Close">
+                  <input type="hidden" name="id" value=@t.Id />
+                  <input type="submit" value="Close" class="btn btn-link"><i class="bi bi-tools"></i>
+               </form>
+            </td>
+         </tr>
+      }
       </tbody>
 </table>
 
